@@ -1,0 +1,5 @@
+keycode 113 = XF86AudioMute
+keycode 114 = XF86AudioLowerVolume
+keycode 115 = XF86AudioRaiseVolume
+keycode 224 = XF86MonBrightnessDown 
+keycode 225 = XF86MonBrightnessUp 

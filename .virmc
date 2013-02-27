@@ -1,0 +1,3 @@
+setlocal omnifunc=javacomplete#Complete
+" shows and hides tagbar with F8
+nmap <F8> :TagbarToggle<CR>
