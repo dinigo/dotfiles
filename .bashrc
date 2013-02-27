@@ -106,7 +106,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Añadido por demil133
+##################################################################
+#			                                         #
+#			Añadido por demil133                     #
+#			                                         #
+##################################################################
 # Selecciona un editor de texto por defecto en terminal:
 export EDITOR=vim
 
@@ -126,5 +130,9 @@ short_dir ()
     fi
 
 }
-# nomre del prefijo de la terminal
+# Nombre del prefijo de la terminal
 export PS1="\`short_dir\`\$ "
+
+# Añade los alias de comandos definidos por el usuario en el 
+# archivo ~/.bash_aliase
+source ~/.bash_aliases
