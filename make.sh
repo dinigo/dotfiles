@@ -5,28 +5,29 @@
 ############################
 
 ########## Variables
-
-dir=~/dot-files                    # dotfiles directory
-olddir=~/dot-files_old             # old dotfiles backup directory
-files=".bash_aliases .git .i3 .vim .virmc .bashrc .gitconfig .vimrc"    # list of files/folders to symlink in homedir
-
-##########
-
+dir=`pwd`	                    # dotfiles directory
+olddir=dotfiles_old             # old dotfiles backup directory
+files=".bash_aliases .i3 .vim .virmc .bashrc .gitconfig .vimrc"    # list of files/folders to symlink in homedir
 # create dotfiles_old in homedir
-mkdir -p $olddir
-echo "Created $olddir for backup of any existing dotfiles in ~"
-
+mkdir -p ~/$olddir
 # change to the dotfiles directory
 cd $dir
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# if file is a link it unlinks
+# if is a file it backs up
+# then it links to my dotfile
 for file in $files; do
-    if [ -f ~/$file ];
+    if [ -L ~/$file ];
     then
-	echo "[backup] $file"
-    	mv ~/$file ~/dotfiles_old/
+	unlink ~/$file
+	echo "[relink] $file"
     else
-	echo "[linked] $file"
+	if [ -f ~/$file ];
+	then
+	    echo "[backup] $file"
+	    mv ~/$file ~/$olddir/$file
+	else
+	    echo "[linked] $file"
+	fi
     fi
     ln -s $dir/$file ~/$file
 done
