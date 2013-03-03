@@ -19,20 +19,14 @@ filetype on
 filetype plugin on
 filetype indent on
  
-" Highlight search terms...
-set hlsearch
-set incsearch " ...dynamically as they are typed.
-
-set visualbell "instead of audible one
-" you can also toggle through the matches by tab
-set wildmode=list:longest,full
-
-" use confirm instead of aborting an action
-set confirm
-
-" current directory is always matching the
-" content of the active window
-set autochdir
+set nohlsearch		" Don't continue to highlight searched phrases.
+set incsearch		" But do highlight as you type your search.
+set ignorecase		" Make searches case-insensitive.
+set ruler		" Always show info along bottom.
+set visualbell 		"instead of audible one
+set wildmode=list:longest,full " you can also toggle through the matches by tab
+set confirm		" use confirm instead of aborting an action
+set autochdir 		" current directory is always matching the content of the active window
 
 " remember some stuff after quiting vim:
 " marks, registers, searches, buffer list
