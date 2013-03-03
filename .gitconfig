@@ -7,3 +7,5 @@
 	ui = auto
 [alias]
     	tree = log --graph --all --decorate --oneline
+[push]
+	default = simple
