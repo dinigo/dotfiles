@@ -1,11 +1,27 @@
 [user]
-	name = demil133
-	email = demil133@gmail.com
+    name = Daniel I.
+    email = demil133@gmail.com
+
 [credential]
-	helper = cache --timeout=7200
+    helper = cache --timeout=7200
+
 [color]
-	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+
 [alias]
-    	tree = log --graph --all --decorate --oneline
+	# Prety graph of commits in the whole repo
+    tree = log --graph --decorate --oneline --abbrev-commit --all
+    	# Show all files in repo
+    ls = ls-files
+    	# Prints the url of the repo
+    geturl = config --get remote.origin.url
+    	# Removes all local branches already merged with master
+    purge = !"git branch -d $(git branch --merged master | grep -v -e '*' -e 'master')"
 [push]
-	default = simple
+    default = simple
+
+[github]
+    user = demil133
