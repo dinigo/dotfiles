@@ -1,5 +1,9 @@
 #!/bin/sh
 case $1 in
+
+    "single" )
+	xrandr --output LVDS1 --primary --output VGA1 --off
+	break;;
     "dual" )
 	xrandr --output LVDS1 --auto --output VGA1 --auto --primary;
 	break;;
@@ -17,6 +21,10 @@ case $1 in
 		sh configure_external_monitor [option]
 
 		OPTIONS:
+
+		single,	Disables second monitor config so that
+			the laptop screen is the only screen.
+
 		dual,	Lets xrandr choose secondary screen 
 			size and sets it as secondary screen.
 
