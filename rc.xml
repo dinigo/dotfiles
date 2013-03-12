@@ -432,12 +432,12 @@
        brightness at all. I think due to hardware issues -->
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-	  <command>~/.scripts/change_brightness.sh 400</command>
+	  <command>~/.scripts/set_brightness.sh 400</command>
       </action>
   </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-	  <command>~/.scripts/change_brightness.sh 900</command>
+	  <command>~/.scripts/set_brightness.sh 900</command>
       </action>
   </keybind>
   <!--    Move window to edge (N, S, E, W) Use Super plus Arrow key -->
