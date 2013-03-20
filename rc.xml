@@ -120,15 +120,14 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>2</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>MAIN</name>
+      <name>WEB</name>
+      <name>WORK</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>500</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -386,32 +385,27 @@
         </startupnotify>
       </action>
     </keybind>
-
     <!-- 
     #############################################
     #	ADDITIONS BY demil133@gmail.com		#
     #############################################
     -->
-
     <!-- Toggles decotarion on windows -->
     <keybind key="W-d">
-	<action name="ToggleDecorations"/>
+      <action name="ToggleDecorations"/>
     </keybind>
-
     <!-- Launhes dmenu-->
     <keybind key="A-d">
-	<action name="Execute">
-	    <command>~/.i3/dmenu_run.sh</command>
-	</action>
+      <action name="Execute">
+        <command>~/.i3/dmenu_run.sh</command>
+      </action>
     </keybind>
-
     <!-- Lock screen-->
     <keybind key="C-A-l">
       <action name="Execute">
         <command>~/.i3/lock_screen.sh</command>
       </action>
     </keybind>
-
     <!-- Volume keys -->
     <keybind key="116">
       <action name="Execute">
@@ -427,56 +421,55 @@
       <action name="Execute">
         <command>amixer set Master toggle</command>
       </action>
-  </keybind>
-  <!-- Brightness keys seem to work but don't change 
+    </keybind>
+    <!-- Brightness keys seem to work but don't change 
        brightness at all. I think due to hardware issues -->
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-	  <command>~/.scripts/set_brightness.sh 400</command>
+        <command>~/.scripts/set_brightness.sh 400</command>
       </action>
-  </keybind>
+    </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-	  <command>~/.scripts/set_brightness.sh 900</command>
+        <command>~/.scripts/set_brightness.sh 900</command>
       </action>
-  </keybind>
-  <!--    Move window to edge (N, S, E, W) Use Super plus Arrow key -->
-  <keybind key="W-Up">
+    </keybind>
+    <!--    Move window to edge (N, S, E, W) Use Super plus Arrow key -->
+    <keybind key="W-Up">
       <action name="MaximizeFull"/>
       <action name="Maximize"/>
-  </keybind>
-  <keybind key="W-Down">
+    </keybind>
+    <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="Unmaximize"/>
-  </keybind>
-  <keybind key="W-Left">
+    </keybind>
+    <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-	  <width>684</width>
+        <width>684</width>
       </action>
       <action name="MoveToEdgeWest"/>
-  </keybind>
-  <keybind key="W-Right">
+    </keybind>
+    <keybind key="W-Right">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-	  <width>684</width>
+        <width>684</width>
       </action>
       <action name="MoveToEdgeEast"/>
-  </keybind>
-  <!-- Toggle full screen like it does under i3-wm -->
-  <keybind key="A-f">
+    </keybind>
+    <!-- Toggle full screen like it does under i3-wm -->
+    <keybind key="A-f">
       <action name="ToggleFullscreen"/>
-  </keybind>
-  <!-- 
+    </keybind>
+    <!-- 
     #############################################
     #	END OF ADDITIONS BY demil133@gmail.com	#
     #############################################
 	 -->
-
-</keyboard>
-<mouse>
+  </keyboard>
+  <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>200</doubleClickTime>
@@ -811,29 +804,30 @@
     </context>
   </mouse>
   <menu>
-      <!-- You can specify more than one menu file in here and they are all loaded,
+    <!-- You can specify more than one menu file in here and they are all loaded,
        just don't make menu ids clash or, well, it'll be kind of pointless -->
-       <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
-       <file>menu.xml</file><hideDelay>200</hideDelay>
-       <!-- if a press-release lasts longer than this setting (in milliseconds), the
+    <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
+    <file>menu.xml</file>
+    <hideDelay>200</hideDelay>
+    <!-- if a press-release lasts longer than this setting (in milliseconds), the
        menu is hidden again -->
-       <middle>no</middle>
-       <!-- center submenus vertically about the parent entry -->
-       <submenuShowDelay>100</submenuShowDelay>
-       <!-- time to delay before showing a submenu after hovering over the parent
+    <middle>no</middle>
+    <!-- center submenus vertically about the parent entry -->
+    <submenuShowDelay>100</submenuShowDelay>
+    <!-- time to delay before showing a submenu after hovering over the parent
        entry.
        if this is a negative value, then the delay is infinite and the
        submenu will not be shown until it is clicked on -->
-       <submenuHideDelay>400</submenuHideDelay>
-       <!-- time to delay before hiding a submenu when selecting another
+    <submenuHideDelay>400</submenuHideDelay>
+    <!-- time to delay before hiding a submenu when selecting another
        entry in parent menu -->
-     <!--  if this is a negative value, then the delay is infinite and the
+    <!--  if this is a negative value, then the delay is infinite and the
        submenu will not be hidden until a different submenu is opened -->
-       <applicationIcons>yes</applicationIcons>
-       <!-- controls if icons appear in the client-list-(combined-)menu -->
-       <manageDesktops>yes</manageDesktops>
-       <!-- show the manage desktops section in the client-list-(combined-)menu -->
-   </menu>
+    <applicationIcons>yes</applicationIcons>
+    <!-- controls if icons appear in the client-list-(combined-)menu -->
+    <manageDesktops>yes</manageDesktops>
+    <!-- show the manage desktops section in the client-list-(combined-)menu -->
+  </menu>
   <applications>
     <!--
   # this is an example with comments through out. use these to make your
