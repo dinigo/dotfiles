@@ -2,6 +2,7 @@
 
 # This function sets your configuration relinking and 
 # making backups when necesary
+
 backupFile()
 {
     if [ -L $2 ]; then
@@ -19,6 +20,10 @@ backupFile()
     fi
     ln -s $1 $2
 }
+
+# Installs vim plugins and so
+sh install_vim.sh
+
 
 olddir=dotfiles_old
 mkdir -p ${HOME}/$olddir

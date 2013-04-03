@@ -1,6 +1,0 @@
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
