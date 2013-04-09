@@ -23,7 +23,9 @@ git clone --quiet https://github.com/scrooloose/syntastic.git
 # Supertab: for completion
 echo -e "Installing Supertab"
 git clone --quiet https://github.com/ervandew/supertab.git
-
+# Fugitive: for vim manipulation from editor
+echo -e "Installing Fugitive"
+git clone --quiet https://github.com/tpope/vim-fugitive.git
 # Run :Helptags to generate help documents from plugins
 echo -e "Configuring"
 vim -c "Helptags" \
