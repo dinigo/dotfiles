@@ -14,15 +14,17 @@
 [alias]
 	# Prety graph of commits in the whole repo
     tree = log --graph --decorate --oneline --abbrev-commit --all
+    tree1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    tree2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+    trees = !"git tree1"
     	# Show all files in repo
     ls = ls-files
     	# Prints the url of the repo
     geturl = config --get remote.origin.url
     	# Removes all local branches already merged with master
     purge = !"git branch -d $(git branch --merged master | grep -v -e '*' -e 'master')"
-    tree1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-    tree2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
-    trees = !"git tree1"
+    	# Shows only the words that changed
+    wdiff = diff --color-words
 [push]
     default = simple
 
