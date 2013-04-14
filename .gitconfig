@@ -30,3 +30,6 @@
 
 [github]
     user = demil133
+[branch "master"]
+	# make `git pull` on master always use rebase
+	rebase = true
