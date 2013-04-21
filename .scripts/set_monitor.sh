@@ -1,20 +1,25 @@
 #!/bin/sh
+
+INTERNAL="LVDS1"
+EXTERNAL="VGA1"
+
 case $1 in
 
+
     "single" )
-	xrandr --output LVDS1 --primary --output VGA1 --off
+	xrandr --output $INTERNAL --auto --primary --output $EXTERNAL --off
 	continue;;
     "dual" )
-	xrandr --output LVDS1 --auto --output VGA1 --auto --primary;
+	xrandr --output $INTERNAL --auto --output $EXTERNAL --auto --primary;
 	continue;;
     "external" )
-	xrandr --output LVDS1 --off --output VGA1 --auto --primary;
+	xrandr --output $INTERNAL --off --output $EXTERNAL --auto --primary;
 	continue;;
     "right" )
-	xrandr  --output LVDS1 --output VGA1 --auto --primary --left-of LVDS1;
+	xrandr  --output $INTERNAL --output $EXTERNAL --auto --primary --left-of $INTERNAL;
 	continue;;
     "left" )
-	xrandr  --output LVDS1 --output VGA1 --auto --primary --right-of LVDS1;
+	xrandr  --output $INTERNAL --auto --output $EXTERNAL --auto --primary --right-of $INTERNAL;
 	continue;;
     *)
 	echo "Sets dual monitor configuration with Xrandr:
@@ -38,4 +43,6 @@ case $1 in
 	at the right of the external screen."
 esac
 
-nitrogen --restore
+if hash nitrogen 2>/dev/null; then
+    nitrogen --restore
+fi
