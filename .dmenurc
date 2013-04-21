@@ -1,0 +1,1 @@
+DMENU='dmenu_run -i -fn Roboto:regular-10 -sb #000000 -nb #772953 -nf #FFFFFF'
