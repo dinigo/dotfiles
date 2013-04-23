@@ -24,7 +24,9 @@ case $1 in
 	continue;;
     "auto" )
         if [ $EXTERNAL_IS_CON = "connected" ]; then
-		sh set_monitor.sh left
+	    xrandr  --output $INTERNAL --auto --output $EXTERNAL --auto --primary --right-of $INTERNAL;
+        else
+	    xrandr --output $INTERNAL --auto --primary --output $EXTERNAL --off
 	fi
 	continue;;
     *)
