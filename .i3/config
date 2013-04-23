@@ -186,5 +186,8 @@ for_window [class="Thunar"] border 1pixel
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 10%+ unmute
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 10%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
+# Brightness keys
+bindsym XF86MonBrightnessUp exec ~/.scripts/set_brightness.sh ++
+bindsym XF86MonBrightnessDown exec ~/.scripts/set_brightness.sh -- 
 # Alternative bind for dmenu_run
 bindsym Menu exec ~/.scripts/dmenu_run
