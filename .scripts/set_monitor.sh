@@ -3,8 +3,7 @@
 INTERNAL=`xrandr | grep LVDS | awk '{print $1}'`
 EXTERNAL=`xrandr | grep VGA | awk '{print $1}'`
 EXTERNAL_IS_CON=`xrandr | grep VGA | awk '{print $2}'`
-
-
+OUTPUTS=` xrandr | grep " connected" | awk '{print $1}'`
 
 case $1 in
     "single" )
@@ -23,11 +22,15 @@ case $1 in
 	xrandr  --output $INTERNAL --auto --output $EXTERNAL --auto --primary --right-of $INTERNAL;
 	continue;;
     "auto" )
-        if [ $EXTERNAL_IS_CON = "connected" ]; then
-	    xrandr  --output $INTERNAL --auto --output $EXTERNAL --auto --primary --right-of $INTERNAL;
-        else
-	    xrandr --output $INTERNAL --auto --primary --output $EXTERNAL --off
-	fi
+	for output in $OUTPUTS; do
+            xrandr --output $output --auto
+        done
+	
+#       if [ $EXTERNAL_IS_CON = "connected" ]; then
+#           xrandr  --output $INTERNAL --auto --output $EXTERNAL --auto --primary --right-of $INTERNAL;
+#       else
+#           xrandr --output $INTERNAL --auto --primary --output $EXTERNAL --off
+#       fi
 	continue;;
     *)
 	echo "Sets dual monitor configuration with Xrandr:
