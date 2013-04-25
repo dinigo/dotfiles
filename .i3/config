@@ -167,10 +167,15 @@ bar {
 # MY CONFIG AND DAEMONS
 exec dropboxd
 exec xrdb .Xresources
+exec xsetroot -solid "#333333"
+
+# SCREEN CONFIG DEPENDING ON TTY LOGIN
 # IF IM AT TTY1 STARTX WITH SINGLE MONITOR
 exec [[ $XDG_VTNR -eq 1 ]] && sh ${HOME}/.scripts/set_monitor.sh single
 # FI IM AT TTY2 STARTX WITH DUAL MONITOR
 exec [[ $XDG_VTNR -eq 2 ]] && sh ${HOME}/.scripts/set_monitor.sh left
+
+# BINDINGS
 # Toggle show border
 bindsym $mod+b border toggle
 # Shortcut to block (C^ + MOD + L) 
