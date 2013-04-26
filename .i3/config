@@ -71,6 +71,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
+bindsym $mod+t layout toggle all
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -110,15 +111,16 @@ bindsym KP_8 workspace 8
 bindsym KP_9 workspace 9
 bindsym KP_0 workspace 10
 # move focused container to workspace bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -165,15 +167,15 @@ bar {
 ##################################################################################
 ##################################################################################
 # MY CONFIG AND DAEMONS
-exec dropboxd
-exec xrdb .Xresources
-exec xsetroot -solid "#333333"
+exec --no-startup-id dropboxd
+exec --no-startup-id xrdb .Xresources
+exec_allways --no-startup-id xsetroot -solid "#333333"
 
 # SCREEN CONFIG DEPENDING ON TTY LOGIN
 # IF IM AT TTY1 STARTX WITH SINGLE MONITOR
-exec [[ $XDG_VTNR -eq 1 ]] && sh ${HOME}/.scripts/set_monitor.sh single
+exec --no-startup-id [[ $XDG_VTNR -eq 1 ]] && sh ${HOME}/.scripts/set_monitor.sh single
 # FI IM AT TTY2 STARTX WITH DUAL MONITOR
-exec [[ $XDG_VTNR -eq 2 ]] && sh ${HOME}/.scripts/set_monitor.sh left
+exec --no-startup-id [[ $XDG_VTNR -eq 2 ]] && sh ${HOME}/.scripts/set_monitor.sh left
 
 # BINDINGS
 # Toggle show border
@@ -196,3 +198,16 @@ bindsym XF86MonBrightnessUp exec ~/.scripts/set_brightness.sh ++
 bindsym XF86MonBrightnessDown exec ~/.scripts/set_brightness.sh -- 
 # Alternative bind for dmenu_run
 bindsym Menu exec ~/.scripts/dmenu_run
+# Take a screenshot with Print key
+bindsym Print exec scrot
+# Shows "caps on the title bar
+mode "caps" {
+        bindsym Caps_Lock mode "default"
+}
+bindsym Caps_Lock mode "caps"
+
+# Uses numpad as numERIC 
+mode "num" {
+        bindsym Num_Lock mode "default"
+}
+bindsym Num_Lock mode "num"
