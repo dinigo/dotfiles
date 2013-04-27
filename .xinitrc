@@ -10,6 +10,9 @@ xsetroot -solid "#333333"
 # Notification
 dunst -config ~/.i3/dunstrc &
 
+# Automount daemon
+udiskie &
+
 # Runs i3wm
 exec i3
 
