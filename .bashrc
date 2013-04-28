@@ -133,11 +133,6 @@ short_dir ()
 # Nombre del prefijo de la terminal
 export PS1="\`short_dir\`\$ "
 
-# Añade los alias de comandos definidos por el usuario en el 
-# archivo ~/.bash_aliase
-source ~/.bash_aliases
-
-
 # ex - Extraer.
 # usage: ex <file>
 ex ()
