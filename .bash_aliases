@@ -32,3 +32,5 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+
 alias grep="grep -n --color=auto $@"
 alias ls='ls --color=auto'
 alias install="sudo powerpill -S "
+
+alias gitpush="git push; notify-send -u normal -a GIT 'pushed to upstream'"
