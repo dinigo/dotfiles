@@ -22,19 +22,16 @@
 
     sticky_history = yes
     line_height = 0
-
-    separator_height = 2;
-
-    separator_color = frame
-
+    separator_height = 1
+    padding = 2
 [frame]
-    width = 1
+    width = 0
     color = "#aaaaaa"
 
 [shortcuts]
     close = mod4+x
     close_all = mod4+ctrl+x
-    history = mod4++ctrl+h
+    history = mod4+ctrl+h
 
 [urgency_low]
     background = "#404040"
