@@ -26,7 +26,7 @@ pacsearch() {
 # IP addresses
 alias external-ip="notify-send -u normal -a EXTERNAL-IP `curl -s ifconfig.me/ip`"
 alias local-ip="notify-send -u normal -a LOCAL-IP `ip addr | grep 192 | awk '{print $2}'`"
-alias list-local-ips="nmap -sP 192.168.* | grep 192"
+alias list-local-ips="nmap -sP 192.168.1.* | grep 192  | awk '{print \$5}'"
 
 alias grep="grep -n --color=auto $@"
 alias ls='ls --color=auto'
