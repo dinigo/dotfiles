@@ -57,3 +57,6 @@ extract ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# Uses dmenu to connect to a machine on the local network
+alias sshroot='ssh root@"$(list-local-ips | dmenu -l 4 -i -fn Roboto:regular-10)"' 
