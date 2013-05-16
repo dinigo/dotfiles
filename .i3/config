@@ -185,9 +185,9 @@ for_window [title="operaciones sobre archivos"] floating enable
 for_window [title="Eclipse"] floating enable 
 
 # Alsa Mixer volume control
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 10%+ unmute; exec mpg123 ~/.i3/sound_feedback.mp3 &
-bindsym XF86AudioLowerVolume  exec amixer -q sset Master 10%- unmute; exec mpg123 ~/.i3/sound_feedback.mp3 &
-bindsym XF86AudioMute exec amixer -q sset Master toggle; exec sleep 100; exec mpg123 ~/.i3/sound_feedback.mp3 &
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 10%+ unmute; exec mpg123 ~/.sounds/sound_feedback.mp3 &
+bindsym XF86AudioLowerVolume  exec amixer -q sset Master 10%- unmute; exec mpg123 ~/.sounds/sound_feedback.mp3 &
+bindsym XF86AudioMute exec amixer -q sset Master toggle; exec sleep 100; exec mpg123 ~/.sounds/sound_feedback.mp3 &
 
 # Brightness keys
 bindsym XF86MonBrightnessUp exec ~/.scripts/set_brightness.sh ++
