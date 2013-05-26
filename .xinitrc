@@ -19,5 +19,12 @@ udiskie &
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.mpd/mpd.pid ] && mpd
 
+# Sets the BROWSER enviromental variable
+if [ -n "$DISPLAY" ]; then
+    BROWSER=chromium
+else
+    BROWSER=links
+fi
+
 # Runs i3wm
 exec i3
