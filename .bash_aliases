@@ -38,4 +38,4 @@ alias gitpush="git push; notify-send -u normal -a GIT 'pushed to upstream'"
 alias sshroot='ssh root@"$(list-local-ips | dmenu -l 4 -i -fn Roboto:regular-10)" &' 
 
 # ssh my raspberry pi
-alias raspi="ssh pi@192.168.1.45"
+alias raspi="ssh pi@raspberry.local"
