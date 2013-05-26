@@ -15,3 +15,8 @@ if [ -n "$DISPLAY" ]; then
 else
     BROWSER=links
 fi
+
+# Add user installed programs to the path 
+export PATH=${PATH}:${HOME}/bin
+# Add user scripts to the path
+export PATH=${PATH}:${HOME}/.scripts
