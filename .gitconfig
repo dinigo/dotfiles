@@ -23,6 +23,7 @@
     geturl = config --get remote.origin.url
     # Removes all local branches already merged with master
     purge  = !"git branch -d $(git branch --merged master | grep -v -e '*' -e 'master')"
+    stat   = status -sb
     # Shows only the words that changed
     wdiff  = diff --color-words
 [push]
