@@ -36,3 +36,6 @@ alias gitpush="git push; notify-send -u normal -a GIT 'pushed to upstream'"
 
 # Uses dmenu to connect to a machine on the local network
 alias sshroot='ssh root@"$(list-local-ips | dmenu -l 4 -i -fn Roboto:regular-10)" &' 
+
+# ssh my raspberry pi
+alias raspi="ssh pi@192.168.1.45"
