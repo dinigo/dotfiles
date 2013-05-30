@@ -62,5 +62,5 @@ let g:syntastic_python_checker="flake8"
 " pone el estado (git) del archivo en la
 " barra de estado
 set laststatus=2
-set statusline=%<\ %f\ %{fugitive#statusline()}
+"set statusline=%<\ %f\ %{fugitive#statusline()}
 

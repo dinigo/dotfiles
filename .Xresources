@@ -1,6 +1,6 @@
 ! jwr low contrast
 
-xterm*faceName: DejaVu Sans Mono
+xterm*faceName: DejaVu Sans Mono for Powerline
 xterm*faceSize: 10
 !xterm*faceName: Roboto Regular
 !xterm*faceSize: 10
