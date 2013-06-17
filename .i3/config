@@ -187,9 +187,9 @@ bindsym control+$mod+l exec i3lock -b -c 2c001e -n
 bindsym $mod+o move scratchpad
 bindsym $mod+m scratchpad show
 # Alsa Mixer volume control
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute; exec mpg123 ~/.sounds/sound_feedback.mp3 &
-bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute; exec mpg123 ~/.sounds/sound_feedback.mp3 &
-bindsym XF86AudioMute exec amixer -q sset Master toggle; exec sleep 100; exec mpg123 ~/.sounds/sound_feedback.mp3 &
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute; exec killall -USR1 i3status; exec mpg123 ~/.sounds/sound_feedback.mp3 &
+bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute; exec killall -USR1 i3status; exec mpg123 ~/.sounds/sound_feedback.mp3 &
+bindsym XF86AudioMute exec amixer -q sset Master toggle; exec sleep 100; exec killall -USR1 i3status; exec mpg123 ~/.sounds/sound_feedback.mp3 &
 # Multimedia keys
 bindsym XF86AudioPlay exec ncmpcpp toggle
 bindsym XF86AudioStop exec ncmpcpp stop
