@@ -89,3 +89,8 @@ export EDITOR=vim
 
 # Sets my aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+# Uses powerline as commandline prompt
+if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
