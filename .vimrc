@@ -37,8 +37,7 @@ set autochdir 		" current directory is always matching the content of the active
 " marks, registers, searches, buffer list
 set viminfo='20,<50,s10,h,%
 
-" use console dialogs instead of popup
-" dialogs for simple choices
+" use console dialogs instead of popup  dialogs for simple choices
 set guioptions+=c
 " Hide the mouse pointer while typing
 set mousehide
@@ -56,14 +55,13 @@ map <ScrollWheelDown> <C-E>
 " show or hide tagbar 
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
-" da formato al tagbar
+" Gives tagbar format
 let g:tagbar_indent = 3
 let g:tagbar_singleclick = 1
-" activa la deteccion de errores de 
-" sintaxis en java
-let g:syntastic_check_on_open=1
-let g:syntastic_python_checker="flake8"
-"
+" Error detection with Syntastic
+"let g:syntastic_check_on_open=1
+"let g:syntastic_python_checker="flake8"
+
 """"""""""
 " COLORS "
 """"""""""
@@ -97,3 +95,12 @@ function ToggleNERDTree()
 endfunction
 command -nargs=0 ToggleNERDTree :call ToggleNERDTree()
 nmap <ESC>t :ToggleNERDTree<CR>
+
+"""""""""""
+" FOLDING "
+"""""""""""
+folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
