@@ -94,3 +94,8 @@ export EDITOR=vim
 if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
+
+# Path for android sdk
+export ANDROID_HOME=$HOME/.local/lib/android-sdk
+PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+export TERM=xterm-256color
