@@ -65,6 +65,8 @@ let g:tagbar_singleclick = 1
 """"""""""
 " COLORS "
 """"""""""
+" Uses color scheme with higher contrast for dark
+set background=dark
 " colours for line numbers and so
 highlight LineNr ctermfg=white ctermbg=234 
 " colours for the current line
@@ -99,7 +101,6 @@ nmap <ESC>t :ToggleNERDTree<CR>
 """""""""""
 " FOLDING "
 """""""""""
-folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
