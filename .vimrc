@@ -96,7 +96,7 @@ function ToggleNERDTree()
     execute ":NERDTreeToggle"
 endfunction
 command -nargs=0 ToggleNERDTree :call ToggleNERDTree()
-nmap <ESC>t :ToggleNERDTree<CR>
+nmap <leader>t :ToggleNERDTree<CR>
 
 """""""""""
 " FOLDING "
