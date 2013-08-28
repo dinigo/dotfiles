@@ -26,6 +26,7 @@
     stat   = status -sb
     # Shows only the words that changed
     wdiff  = diff --color-words
+
 [push]
     default = matching
 
